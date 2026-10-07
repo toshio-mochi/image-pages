@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Pages Demo</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --accent: #38bdf8;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #020817, var(--bg));
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .card {
+        width: min(90vw, 960px);
+        background: rgba(17, 24, 39, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 18px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+      }
+
+      .header {
+        padding: 24px 28px 12px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.5rem);
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 24px;
+        padding: 24px 28px 28px;
+      }
+
+      @media (max-width: 720px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .image-wrap {
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        border-radius: 14px;
+        padding: 12px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .meta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .badge {
+        display: inline-block;
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.14);
+        border: 1px solid rgba(56, 189, 248, 0.4);
+        color: var(--accent);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <header class="header">
+        <h1>Image Pages Demo</h1>
+      </header>
+
+      <section class="content">
+        <div class="image-wrap">
+          <img src="images/sample-image.svg" alt="GitHub Pages sample image" />
+        </div>
+
+        <div class="meta">
+          <span class="badge">Sample</span>
+          <p>
+            このページは、GitHub Pages の公開ページに画像を表示する最小構成の例です。
+            画像は <code>images/sample-image.svg</code> に置いています。
+          </p>
+          <p>
+            リポジトリがプライベートの場合は、GitHub にログイン済みのユーザーのみアクセスできる構成になります。
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
